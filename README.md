@@ -1,4 +1,4 @@
-# my-config-nvim
+# config-nvim
 My configuration nvim for all type in work
 
 - Fedora
