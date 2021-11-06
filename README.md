@@ -1,7 +1,7 @@
 # my-config-nvim
 My configuration nvim for all type in work
 
-Fedora
+- Fedora
 ```
 dnf install nvim
 ```
