@@ -1,5 +1,5 @@
 # config-nvim
-My configuration nvim for all type in work
+<p>My configuration nvim for all type in work</p>
 
 > install neovim in fedora
 ```
