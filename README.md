@@ -20,7 +20,7 @@ nvim
 ```
 <br>
 
-> setup obs("neovim open")
+<describe>setup obs("neovim open")</describe>
 <table>
   <thead>
     <tr>
