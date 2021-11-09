@@ -24,14 +24,16 @@ nvim
 <table>
   <thead>
     <tr>
-      <th></th>
-      <th>Atalhos</th>
+      <th>comands</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <td></td>
-      <td></td>
+      <td>Press then "space, e, v"</td>
+      <td>Press then ":PlugInstall"</td>
+      <td>Press then ":w"</td>
+      <td>Press then "space, s, v"</td>
+      <td>Press then ":wq"</td>
     </tr>
   </tbody>
 </table>
