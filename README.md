@@ -29,19 +29,19 @@ nvim
   </thead>
   <tbody>
     <tr>
-      <td>Press then "space, e, v"</td>
+      <td>Press next "space, e, v"</td>
     </tr>
     <tr>
-      <td>Press then ":PlugInstall"</td>
+      <td>Press next ":PlugInstall"</td>
     </tr>
     <tr>
-      <td>Press then ":w"</td>
+      <td>Press next ":w"</td>
     </tr>
     <tr>
-      <td>Press then "space, s, v"</td>
+      <td>Press next "space, s, v"</td>
     </tr>
     <tr>
-      <td>Press then ":wq"</td>
+      <td>Press next ":wq"</td>
     </tr>
   </tbody>
 </table>
