@@ -1,7 +1,7 @@
 # config-nvim
 My configuration nvim for all type in work
 
-- Fedora
+> install neovim in fedora
 ```
-dnf install nvim
+sudo dnf install neovim 
 ```
