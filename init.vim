@@ -6,6 +6,15 @@ Plug 'joshdick/onedark.vim'
 Plug 'preservim/nerdtree'
 Plug 'ryanoasis/vim-devicons'
 Plug 'codota/tabnine-vim'
+
+Plug 'neovim/nvim-lspconfig'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'mfussenegger/nvim-dap'
+Plug 'rcarriga/nvim-dap-ui'
+Plug 'ray-x/go.nvim'
+
+Plug 'vim-test/vim-test'
+Plug 'terryma/vim-multiple-cursors'
 call plug#end()
 
 syntax on
@@ -21,6 +30,18 @@ set shiftwidth=2
 set guicursor+=n:hor20-Cursor/lCursor
 set guifont=DroidSansMono\ Nerd\ Font\ Mono:h12
 set encoding=utf-8
+
+let g:multi_cursor_use_default_mapping=0
+
+" Default mapping
+let g:multi_cursor_start_word_key      = '<C-n>'
+let g:multi_cursor_select_all_word_key = '<A-n>'
+let g:multi_cursor_start_key           = 'g<C-n>'
+let g:multi_cursor_select_all_key      = 'g<A-n>'
+let g:multi_cursor_next_key            = '<C-n>'
+let g:multi_cursor_prev_key            = '<C-p>'
+let g:multi_cursor_skip_key            = '<C-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
 
 let g:onedark_hide_endofbuffer = 1
 let g:onedark_termcolors = 256
@@ -81,8 +102,9 @@ nnoremap <c-x> :bp\|bd #<cr>
 nnoremap <C-b> :NERDTreeToggle<cr>
 nnoremap <F4> :q<CR>
 nnoremap <F4> <Esc:q<CR>
-nnoremap <leader><Space> :call ToggleComment()<cr>
-
+nnoremap <leader><Space> :call ToggleComment()<cr> 
+nnoremap <leader>t :TestFile<CR>
+nnoremap <leader>l :TestLast<CR>
 
 function! ToggleComment()
     if has_key(s:comment_map, &filetype)
@@ -104,4 +126,21 @@ function! ToggleComment()
     end
 endfunction
 
+lua <<EOF
+require 'go'.setup({
+  goimport = 'gopls', -- if set to 'gopls' will use golsp format
+  gofmt = 'gopls', -- if set to gopls will use golsp format
+  max_line_len = 120,
+  tag_transform = false,
+  test_dir = '',
+  comment_placeholder = '   ',
+  lsp_cfg = true, -- false: use your own lspconfig
+  lsp_gofumpt = true, -- true: set default gofmt in gopls format to gofumpt
+  lsp_on_attach = true, -- use on_attach from go.nvim
+  dap_debug = true,
+})
+local protocol = require'vim.lsp.protocol'
+EOF
+
+hi statusline guibg=Green ctermfg=44 guifg=Black ctermbg=333
 hi Normal          ctermfg=252 ctermbg=none
