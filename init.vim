@@ -30,6 +30,7 @@ set shiftwidth=2
 set guicursor+=n:hor20-Cursor/lCursor
 set guifont=DroidSansMono\ Nerd\ Font\ Mono:h12
 set encoding=utf-8
+" set mouse=a
 
 let g:multi_cursor_use_default_mapping=0
 
@@ -68,6 +69,7 @@ let s:comment_map = {
     \   "go": '\/\/',
     \   "javascript": '\/\/',
     \   "lua": '--',
+		\		"php": '\/\/',
     \   "ruby": '#',
     \   "sh": '#',
     \   "bash": '#',
@@ -101,10 +103,11 @@ nnoremap <M-h> :bp<cr>
 nnoremap <c-x> :bp\|bd #<cr>
 nnoremap <C-b> :NERDTreeToggle<cr>
 nnoremap <F4> :q<CR>
-nnoremap <F4> <Esc:q<CR>
-nnoremap <leader><Space> :call ToggleComment()<cr> 
+nnoremap <F4><Esc>:q<CR>
+nnoremap <leader><space> :call ToggleComment()<cr> 
 nnoremap <leader>t :TestFile<CR>
 nnoremap <leader>l :TestLast<CR>
+nnoremap <F6> :grep! "\<<cword>\>" . -r<CR>:copen<CR>
 
 function! ToggleComment()
     if has_key(s:comment_map, &filetype)
